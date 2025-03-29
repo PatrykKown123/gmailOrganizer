@@ -10,7 +10,7 @@ for (let i = 0; i < iconCount; i++) {
   gmailIcon.classList.add("grey-gmail");
   gmailIcon.style.position = "absolute";
   gmailIcon.style.zIndex = -1;
-  gmailIcon.style.opacity = "45%";
+  gmailIcon.style.opacity = "0%";
   
   const col = i % cols;
   const row = Math.floor(i / cols);
@@ -20,21 +20,26 @@ for (let i = 0; i < iconCount; i++) {
   gmailIcon.style.left = `${(col * (100/cols)) + xOffset}%`;
   gmailIcon.style.top = `${(row * (100/rows)) + yOffset}%`;
   
-  
-  gmailIcon.style.width = "5%";
-  gmailIcon.style.transform = `rotate(${Math.random() * 360}deg)`;
-  
+  gmailIcon.style.width = "5%";  
   body.appendChild(gmailIcon);
 }
 
+const authDiv = document.querySelector("#googleAuthLaunch");
+const googleIcon = document.querySelector()
+
 document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.grey-gmail');
-    images.forEach(image => {
-        const randomDuration = 3 + Math.random() * 7;
-        image.style.animation = `animate ${randomDuration}s linear infinite`;
+    authDiv.addEventListener('mouseenter', () => {
+        const images = document.querySelectorAll('.grey-gmail');
+        images.forEach(image => {
+            const randomDuration = 2 + Math.random() * 5;
+            image.style.animation = `animate ${randomDuration}s linear infinite`;
+        });
+    });
+    
+    authDiv.addEventListener('mouseleave', () => {
+        const images = document.querySelectorAll('.grey-gmail');
+        images.forEach(image => {
+            image.style.animation = 'none';
+        });
     });
 });
-
-googleAuthLaunch
-
-const authDiv = 
