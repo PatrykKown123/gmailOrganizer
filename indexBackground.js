@@ -25,21 +25,29 @@ for (let i = 0; i < iconCount; i++) {
 }
 
 const authDiv = document.querySelector("#googleAuthLaunch");
-const googleIcon = document.querySelector()
+const googleIcon = document.querySelector("#googleIcon");
 
 document.addEventListener('DOMContentLoaded', function() {
+    const authDiv = document.querySelector("#googleAuthLaunch");
+    const googleIcon = document.querySelector("#googleIcon");
+
     authDiv.addEventListener('mouseenter', () => {
         const images = document.querySelectorAll('.grey-gmail');
         images.forEach(image => {
             const randomDuration = 2 + Math.random() * 5;
             image.style.animation = `animate ${randomDuration}s linear infinite`;
+            image.style.opacity = "45%";
         });
+        googleIcon.style.animation = `yTranslate 0.5s ease forwards`;
     });
     
     authDiv.addEventListener('mouseleave', () => {
         const images = document.querySelectorAll('.grey-gmail');
         images.forEach(image => {
             image.style.animation = 'none';
+            image.style.opacity = "0%";
         });
+
+        googleIcon.style.animation = `yTranslateReverse 0.5s ease forwards`;
     });
 });
