@@ -39,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
             image.style.opacity = "45%";
         });
         googleIcon.style.animation = `yTranslate 0.5s ease forwards`;
+        googleIcon.addEventListener('mouseenter', () => {
+            googleIcon.classList.add('glow-border');
+            googleIcon.style.animation = `yTranslate 0.5s ease forwards, pulse-glow 2s infinite`;
+        });
+        authDiv.addEventListener('mouseleave', () => {
+            googleIcon.classList.remove('glow-border');
+            googleIcon.style.animation = `yTranslateReverse 0.5s ease forwards`;
+        });
     });
     
     authDiv.addEventListener('mouseleave', () => {
