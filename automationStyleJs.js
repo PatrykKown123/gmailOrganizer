@@ -1,47 +1,51 @@
-const labelIcon = document.querySelector('#labelIcon');
-const trashIcon = document.querySelector('#trashIcon');
-const spamIcon = document.querySelector('#spamIcon');
-const deleteIcon = document.querySelector('#deleteIcon');
-
-const containerLabel = document.querySelector('#manageAuto');
-const containerTrash = document.querySelector('#trashAuto');
-const containerSpam = document.querySelector('#spamAuto');
-const containerDelete = document.querySelector('#deleteAuto');
-
-const h1organize = document.querySelector('#h1manage');
-const h1trash = document.querySelector('#h1trash');
-const h1spam = document.querySelector('#h1spam');
-const h1delete = document.querySelector('#h1delete');
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    containerLabel.addEventListener('mouseenter', () => {
-        labelIcon.style.animation = 'yTranslate 1.5s ease forwards';
-        h1organize.style.animation = 'fadeIn 4s ease forwards';
-    });
-    containerLabel.addEventListener('mouseleave', () => {
-        labelIcon.style.animation = 'yTranslateReverse 1.5s ease forwards';
-        h1organize.style.animation = 'fadeOut 0.5s ease forwards';
-    });
+    // Select elements
+    const labelIcon = document.querySelector('#labelIcon');
+    const trashIcon = document.querySelector('#trashIcon');
+    const spamIcon = document.querySelector('#spamIcon');
+    const deleteIcon = document.querySelector('#deleteIcon');
 
-    containerTrash.addEventListener('mouseenter', () => {
-        trashIcon.style.animation = 'yTranslate 1.5s ease forwards';
-    });
-    containerTrash.addEventListener('mouseleave', () => {
-        trashIcon.style.animation = 'yTranslateReverse 1.5s ease forwards';
-    });
+    const containerLabel = document.querySelector('#manageAuto');
+    const containerTrash = document.querySelector('#trashAuto');
+    const containerSpam = document.querySelector('#spamAuto');
+    const containerDelete = document.querySelector('#deleteAuto');
 
-    containerSpam.addEventListener('mouseenter', () => {
-        spamIcon.style.animation = 'yTranslate 1.5s ease forwards';
-    });
-    containerSpam.addEventListener('mouseleave', () => {
-        spamIcon.style.animation = 'yTranslateReverse 1.5s ease forwards';
-    });
+    const h1organize = document.querySelector('#h1manage');
+    const h1trash = document.querySelector('#h1trash');
+    const h1spam = document.querySelector('#h1spam');
+    const h1delete = document.querySelector('#h1delete');
 
-    containerDelete.addEventListener('mouseenter', () => {
-        deleteIcon.style.animation = 'yTranslate 1.5s ease forwards';
-    });
-    containerDelete.addEventListener('mouseleave', () => {
-        deleteIcon.style.animation = 'yTranslateReverse 1.5s ease forwards';
-    });
+    const porganize = document.querySelector('#pmanage');
+    const ptrash = document.querySelector('#ptrash');
+    const pspam = document.querySelector('#pspam');
+    const pdelete = document.querySelector('#pdelete'); 
+
+    const h2Title = document.querySelector('#h2title');
+
+    function addHoverEffect(container, icon, h1, p) {
+        container.addEventListener('mouseenter', () => {
+            icon.style.animation = 'yTranslate 1.5s ease forwards';
+            h1.style.animation = 'fadeIn 4s ease forwards';
+            p.style.animation = 'fadeIn 4s ease forwards';
+            h2Title.style.animation = 'fadeOut 0.5s ease forwards';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            icon.style.animation = 'yTranslateReverse 1.5s ease forwards';
+            h1.style.animation = 'fadeOut 0.5s ease forwards';
+            p.style.animation = 'fadeOut 0.5s ease forwards';
+            h2Title.style.animation = 'fadeIn 3s ease forwards';
+        });
+    }
+
+    addHoverEffect(containerLabel, labelIcon, h1organize, porganize);
+    addHoverEffect(containerTrash, trashIcon, h1trash, ptrash);
+    addHoverEffect(containerSpam, spamIcon, h1spam, pspam);
+    addHoverEffect(containerDelete, deleteIcon, h1delete, pdelete);
+
+    // setTimeout(() => {
+    //     if (h2Title) {
+    //         h2Title.style.borderRight = 'none';
+    //     }
+    // }, 4000);
 });

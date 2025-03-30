@@ -11,6 +11,44 @@ h1 {
     transform: translateY(-140px);   
     opacity: 0%; 
 }
+h2 {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    white-space: nowrap;
+    /* border-right: 3px solid white; */
+    opacity: 1;
+    /* animation: 
+        typing 3s steps(40, end),
+        blink-caret 0.75s step-end infinite; */
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 45% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+    100%{border-color: rgba(0, 0, 0, 0)}
+}
+p {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 100%;
+    opacity: 0;
+    font-size: 1.25rem;
+    transition: opacity 0.5s ease;
+    top: 50%;
+    margin-left: 30px;
+    margin-right: 20px;
+    transform: translateY(-80px);   
+    width: 95%;
+}
 
 #automationOptionsContainer {
     display: flex;
